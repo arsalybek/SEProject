@@ -56,6 +56,6 @@ public class UserFragment extends Fragment {
     private void setupTabTexts() {
         mTabLayout.getTabAt(0).setText("Learner");
         mTabLayout.getTabAt(1).setText("Teacher");
-        mTabLayout.getTabAt(2).setText("Partner");
+        mTabLayout.getTabAt(2).setText("Partner For");
     }
 }
