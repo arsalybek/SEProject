@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.view.fragments;
 
 import android.os.Bundle;
 
@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.sys.tabUserFragments.LearnerFragment;
-import com.example.sys.tabUserFragments.PartnerFragment;
-import com.example.sys.tabUserFragments.TeacherFragment;
+import com.example.sys.R;
+import com.example.sys.view.adapters.ViewPagerFragmentAdapter;
+import com.example.sys.view.fragments.tabUserFragments.LearnerFragment;
+import com.example.sys.view.fragments.tabUserFragments.PartnerFragment;
+import com.example.sys.view.fragments.tabUserFragments.TeacherFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

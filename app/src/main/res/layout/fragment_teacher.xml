@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tabUserFragments.LearnerFragment"
+    tools:context=".view.fragments.tabUserFragments.LearnerFragment"
     android:background="@color/systemDarkBlue">
 
     <LinearLayout
@@ -19,9 +19,10 @@
             android:layout_height="45dp"
             android:hint="  Search skill"
             android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/black"
             android:drawableStart="@drawable/ic_search_skill"
-            android:background="@drawable/skill_search_user"/>
+            android:background="@drawable/skill_search_user"
+            android:backgroundTint="@android:color/white"/>
     </LinearLayout>
     <LinearLayout
         android:layout_below="@id/user_search_skill"
@@ -47,4 +48,20 @@
             android:layout_marginTop="12dp"
             android:textSize="16dp"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/learn_skill_3"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/user_add_skill"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_settings"
+        android:backgroundTint="@color/systemLightRed"
+        android:fontFamily="@font/muli_regular"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:text="C++  Programming Language"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
 </RelativeLayout>

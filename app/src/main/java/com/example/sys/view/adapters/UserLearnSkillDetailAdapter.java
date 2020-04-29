@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.view.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sys.R;
 import com.example.sys.model.Skill;
 
 import java.util.List;
 
-class UserLearnSkillDetailAdapter extends RecyclerView.Adapter<UserLearnSkillDetailAdapter.UserDetailHolder> {
+public class UserLearnSkillDetailAdapter extends RecyclerView.Adapter<UserLearnSkillDetailAdapter.UserDetailHolder> {
     private List<Skill> learnerSkills;
     public UserLearnSkillDetailAdapter(List<Skill> learnerSkills){
         this.learnerSkills = learnerSkills;

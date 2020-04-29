@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".controller.MainActivity"
     android:background="@color/systemDarkBlue">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
-        app:itemIconTint="@drawable/bottom_nav"
-        app:itemTextColor="@drawable/bottom_nav"
+        android:background="@drawable/rounded_buttom_nav"
+        android:layout_marginHorizontal="16dp"
+        app:itemIconTint="@drawable/bottom_nav_background"
+        app:itemTextColor="@drawable/bottom_nav_background"
         app:menu="@menu/menu_nav_bar" />
 
     <FrameLayout

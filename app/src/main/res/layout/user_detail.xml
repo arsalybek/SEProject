@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/systemDarkBlue"
     android:fitsSystemWindows="true"
-    tools:context=".UserDetailFragment"
+    tools:context=".view.fragments.UserDetailFragment"
     android:layout_marginBottom="50dp">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -64,7 +64,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.example.sys.DetailScrollView
+    <com.example.sys.view.utils.DetailScrollView
         android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -266,5 +266,5 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
-    </com.example.sys.DetailScrollView>
+    </com.example.sys.view.utils.DetailScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
