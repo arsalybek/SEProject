@@ -3,6 +3,6 @@
 
     <item>
         <bitmap
-            android:src="@drawable/splash_new"/>
+            android:src="@drawable/splash_new_photo"/>
     </item>
 </layer-list>
