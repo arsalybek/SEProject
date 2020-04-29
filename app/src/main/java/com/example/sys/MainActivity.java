@@ -8,19 +8,28 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.sys.tabMainFragments.FavFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
-    private Fragment fragment;
-    private FragmentManager fm;
+public class MainActivity extends AppCompatActivity implements IMarked {
+
+    private HomeFragment fragmentAll = HomeFragment.newInstance(true);
+    private HomeFragment fragmentMark = HomeFragment.newInstance(false);
+    private SearchFragment searchFragment = new SearchFragment();
+    private UserFragment userFragment = new UserFragment();
+
+    public static FragmentManager fm;
+    private Fragment fragment = fragmentAll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         fm = getSupportFragmentManager();
-        fragment =  fm.findFragmentById(R.id.fragment_container);
+        fm.beginTransaction().add(R.id.fragment_container,userFragment,"4").hide(userFragment).commit();
+        fm.beginTransaction().add(R.id.fragment_container,searchFragment,"3").hide(searchFragment).commit();
+        fm.beginTransaction().add(R.id.fragment_container,fragmentMark,"2").hide(fragmentMark).commit();
+        fm.beginTransaction().add(R.id.fragment_container,fragmentAll,"1").commit();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_bar);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -28,40 +37,38 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.action_home:
-                        fragment = new MainFragment();
                         fm.beginTransaction()
-                                .replace(R.id.fragment_container, fragment)
-                                .commit();
-
-                        break;
+                                .hide(fragment).show(fragmentAll).commit();
+                        fragment = fragmentAll;
+                        return true;
                     case R.id.action_search:
-                        fragment = new SearchFragment();
                         fm.beginTransaction()
-                                .replace(R.id.fragment_container, fragment)
-                                .commit();
-
-                        break;
-                    case R.id.action_chat:
-                        fragment = new ChatFragment();
+                                .hide(fragment).show(searchFragment).commit();
+                        fragment = searchFragment;
+                        return true;
+                    case R.id.action_bookmark:
                         fm.beginTransaction()
-                                .replace(R.id.fragment_container, fragment)
-                                .commit();
-
-                        break;
+                                .hide(fragment).show(fragmentMark).commit();
+                        fragment = fragmentMark;
+                        return true;
                     case R.id.action_person:
-                        fragment = new UserFragment();
                         fm.beginTransaction()
-                                .replace(R.id.fragment_container, fragment)
-                                .commit();
-
-                        break;
+                                .hide(fragment).show(userFragment).commit();
+                        fragment = userFragment;
+                        return true;
                 }
                 return false;
             }
         });
-//        if(savedInstanceState == null){
-//            bottomNavigationView.setSelectedItemId(R.id.action_home);
-//        }
+        if(savedInstanceState == null){
+            bottomNavigationView.setSelectedItemId(R.id.action_home);
+        }
     }
+
+    @Override
+    public void onUserMarked() {
+        fragmentAll.updatePage();
+        fragmentMark.updateMark();
     }
+}
 

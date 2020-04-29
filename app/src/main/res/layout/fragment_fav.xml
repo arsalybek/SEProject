@@ -3,12 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tabMainFragments.FavFragment">
+    tools:context=".tabMainFragments.FavFragment"
+    android:background="@color/systemDarkBlue">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="User can save some teachers" />
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/fav_rec_view"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+   </androidx.recyclerview.widget.RecyclerView>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="GGGGGGGGGGGGGGGG"
+       android:textColor="@android:color/white"/>
 
 </FrameLayout>

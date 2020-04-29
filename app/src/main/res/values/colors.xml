@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#15191C</color>
-    <color name="colorPrimaryDark">#4E4848</color>
-    <color name="colorAccent">#4E4848</color>
-    <color name="systemRed">#83080a</color>
+    <color name="colorPrimaryDark">#15191C</color>
+    <color name="colorAccent">#15191C</color>
+    <color name="systemRed">#F71138</color>
+    <color name="systemLightGray">#2E2F33</color>
+    <color name="systemDarkBlue">#1C1E2A</color>
+    <color name="systemDarkBlueTransparent">#8C1C1E2A</color>
+    <color name="systemLightRed">#33F71138</color>
+    <color name="toolBar">#2D2D39</color>
+    <color name="systemTransparent">#9A9A9A</color>
 </resources>

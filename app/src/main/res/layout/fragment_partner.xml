@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tabUserFragments.PartnerFragment">
+    tools:context=".tabUserFragments.LearnerFragment"
+    android:background="@color/systemDarkBlue">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/user_search_skill"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Partners" />
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="  Search skill"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:drawableStart="@drawable/ic_search_skill"
+            android:background="@drawable/skill_search_user"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/user_search_skill"
+        android:id="@+id/user_add_skill"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_add_skill_form"
+        android:layout_marginHorizontal="16dp">
 
-</FrameLayout>
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_circle"
+            android:src="@drawable/ic_add"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add a skill"
+            android:textStyle="italic"
+            android:textColor="@android:color/white"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="12dp"
+            android:textSize="16dp"/>
+    </LinearLayout>
+</RelativeLayout>
