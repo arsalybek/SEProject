@@ -1,15 +1,14 @@
-package com.example.sys;
+package com.example.sys.view.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sys.model.Skill;
+import com.example.sys.R;
 
 import java.util.List;
 

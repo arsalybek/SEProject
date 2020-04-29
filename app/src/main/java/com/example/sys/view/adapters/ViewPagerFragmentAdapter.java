@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.view.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

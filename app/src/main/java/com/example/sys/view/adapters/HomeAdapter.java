@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.view.adapters;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sys.view.utils.IMarked;
+import com.example.sys.controller.MainActivity;
+import com.example.sys.R;
+import com.example.sys.view.fragments.UserDetailFragment;
 import com.example.sys.model.Skill;
 import com.example.sys.model.User;
 
@@ -25,15 +29,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.UserHolder>  {
     }
     @NonNull
     @Override
-    public HomeAdapter.UserHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UserHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_card_row,parent,false);
         return new UserHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final HomeAdapter.UserHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final UserHolder holder, int position) {
         final User user = usersList.get(position);
-        Log.d("Adapter",user.getName());
         Skill curSkill = user.getTeacherSkills().get(0);
         holder.name.setText(user.getName());
         holder.surname.setText(user.getSurname());

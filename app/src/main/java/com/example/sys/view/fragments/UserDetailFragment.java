@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.view.fragments;
 
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -16,7 +16,12 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sys.R;
+import com.example.sys.view.adapters.UserLearnSkillDetailAdapter;
+import com.example.sys.view.adapters.UserPortfolioAdapter;
 import com.example.sys.model.User;
+import com.example.sys.view.utils.DetailScrollView;
+
 import org.jetbrains.annotations.NotNull;
 
 

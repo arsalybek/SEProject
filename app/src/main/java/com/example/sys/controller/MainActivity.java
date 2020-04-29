@@ -1,4 +1,4 @@
-package com.example.sys;
+package com.example.sys.controller;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,15 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.sys.R;
+import com.example.sys.view.fragments.HomeFragment;
+import com.example.sys.view.fragments.SearchFragment;
+import com.example.sys.view.fragments.UserFragment;
+import com.example.sys.view.utils.IMarked;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements IMarked {
 
@@ -18,11 +26,21 @@ public class MainActivity extends AppCompatActivity implements IMarked {
     private UserFragment userFragment = new UserFragment();
 
     public static FragmentManager fm;
-    private Fragment fragment = fragmentAll;
+    Fragment fragment = fragmentAll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("sys").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                String msg = "Subscribed";
+                if(!task.isSuccessful()){
+                    msg = "Not subscribed";
+                }
+            }
+        });
 
         fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.fragment_container,userFragment,"4").hide(userFragment).commit();
@@ -38,22 +56,22 @@ public class MainActivity extends AppCompatActivity implements IMarked {
                 switch (item.getItemId()){
                     case R.id.action_home:
                         fm.beginTransaction()
-                                .hide(fragment).show(fragmentAll).commit();
+                                .hide(fragment).show(fragmentAll).addToBackStack(null).commit();
                         fragment = fragmentAll;
                         return true;
                     case R.id.action_search:
                         fm.beginTransaction()
-                                .hide(fragment).show(searchFragment).commit();
+                                .hide(fragment).show(searchFragment).addToBackStack(null).commit();
                         fragment = searchFragment;
                         return true;
                     case R.id.action_bookmark:
                         fm.beginTransaction()
-                                .hide(fragment).show(fragmentMark).commit();
+                                .hide(fragment).show(fragmentMark).addToBackStack(null).commit();
                         fragment = fragmentMark;
                         return true;
                     case R.id.action_person:
                         fm.beginTransaction()
-                                .hide(fragment).show(userFragment).commit();
+                                .hide(fragment).show(userFragment).addToBackStack(null).commit();
                         fragment = userFragment;
                         return true;
                 }

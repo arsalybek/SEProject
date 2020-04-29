@@ -3,48 +3,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tabUserFragments.LearnerFragment"
-    android:background="@color/systemDarkBlue">
+    android:background="@color/systemDarkBlue"
+    tools:context=".view.fragments.tabUserFragments.LearnerFragment">
 
-        <LinearLayout
-            android:id="@+id/user_search_skill"
+    <LinearLayout
+        android:id="@+id/user_search_skill"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:orientation="horizontal"
-            android:background="@android:color/transparent"
-            android:layout_marginVertical="8dp"
-            android:layout_marginHorizontal="16dp">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:hint="  Search skill"
-                android:textColor="@android:color/white"
-                android:textColorHint="@android:color/white"
-                android:drawableStart="@drawable/ic_search_skill"
-                android:background="@drawable/skill_search_user"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_below="@id/user_search_skill"
-            android:id="@+id/user_add_skill"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/rounded_add_skill_form"
-            android:layout_marginHorizontal="16dp">
+            android:layout_height="45dp"
+            android:background="@drawable/skill_search_user"
+            android:backgroundTint="@android:color/white"
+            android:drawableStart="@drawable/ic_search_skill"
+            android:hint="  Search skill"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/black" />
+    </LinearLayout>
 
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/login_circle"
-                android:src="@drawable/ic_add"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add a skill"
-                android:textStyle="italic"
-                android:textColor="@android:color/white"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginTop="12dp"
-                android:textSize="16dp"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/learn_skill_1"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/user_add_skill"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_settings"
+        android:backgroundTint="@color/systemLightRed"
+        android:fontFamily="@font/muli_regular"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:text="Entrepreneurship and Self-Growth"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/learn_skill_2"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/learn_skill_1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_settings"
+        android:backgroundTint="@color/systemLightRed"
+        android:fontFamily="@font/muli_regular"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:text="Desserts"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/learn_skill_3"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_below="@id/learn_skill_2"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/rounded_settings"
+        android:backgroundTint="@color/systemLightRed"
+        android:fontFamily="@font/muli_regular"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:text="BeatMaking"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18dp" />
+
+    <LinearLayout
+        android:id="@+id/user_add_skill"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_search_skill"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/rounded_add_skill_form"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_circle"
+            android:src="@drawable/ic_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="12dp"
+            android:text="Add a skill"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="italic" />
+    </LinearLayout>
 </RelativeLayout>
